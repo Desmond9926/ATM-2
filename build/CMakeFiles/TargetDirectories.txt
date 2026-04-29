@@ -1,0 +1,5 @@
+Q:/ATM-2/build/CMakeFiles/atm_common.dir
+Q:/ATM-2/build/CMakeFiles/atm_server.dir
+Q:/ATM-2/build/CMakeFiles/atm_client.dir
+Q:/ATM-2/build/CMakeFiles/edit_cache.dir
+Q:/ATM-2/build/CMakeFiles/rebuild_cache.dir

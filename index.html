@@ -1,0 +1,790 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>ATM 银行模拟系统 - Presentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/white.css" id="theme">
+  <style>
+    :root {
+      --bg: #09090b;
+      --panel: #18181b;
+      --text: #fafafa;
+      --muted: #a1a1aa;
+      --line: #27272a;
+      --soft: #71717a;
+      --chip: #111113;
+    }
+
+    html, body {
+      background: var(--bg);
+    }
+
+    .reveal {
+      font-family: "Inter", "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+      font-size: 32px;
+      color: var(--text);
+    }
+
+    .reveal .slides section {
+      text-align: left;
+    }
+
+    .reveal-viewport,
+    .reveal .slides,
+    .reveal .backgrounds {
+      background: var(--bg);
+    }
+
+    .reveal h1{
+      text-transform: none;
+      letter-spacing: -0.03em;
+      color:#fafafa}
+    .reveal h2,
+    .reveal h3 {
+      text-transform: none;
+      letter-spacing: -0.03em;
+    }
+
+    .reveal h1 {
+      font-size: 2.2em;
+      margin-bottom: 0.35em;
+      font-weight: 600;
+    }
+
+    .reveal h2 {
+      font-size: 1.5em;
+      color: var(--text);
+      margin-bottom: 0.5em;
+      font-weight: 600;
+    }
+
+    .reveal h3 {
+      font-size: 1em;
+      color: var(--text);
+      margin-bottom: 0.4em;
+      font-weight: 600;
+    }
+
+    .reveal p,
+    .reveal li {
+      line-height: 1.45;
+    }
+
+    .reveal ul,
+    .reveal ol {
+      display: block;
+      margin-left: 1em;
+    }
+
+    .hero {
+      min-height: 560px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .hero .tag {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--chip);
+      color: var(--muted);
+      font-size: 0.58em;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    .subtle {
+      color: var(--muted);
+      font-size: 0.72em;
+    }
+
+    .grid-2,
+    .grid-3 {
+      display: grid;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .grid-2 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px 20px;
+      box-sizing: border-box;
+    }
+
+    .card strong {
+      color: #fff;
+    }
+
+    .metric {
+      font-size: 1.8em;
+      color: var(--text);
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      font-size: 0.78em;
+    }
+
+    .flow span {
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+    }
+
+    .flow .arrow {
+      background: transparent;
+      border: 0;
+      color: var(--muted);
+      padding: 0;
+    }
+
+    .table-like {
+      display: grid;
+      grid-template-columns: 1.1fr 2fr;
+      gap: 10px 16px;
+      font-size: 0.72em;
+    }
+
+    .table-like div {
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: #111113;
+      border: 1px solid var(--line);
+    }
+
+    .table-like .head {
+      color: var(--text);
+      font-weight: 700;
+      background: #18181b;
+    }
+
+    code {
+      color: #f4f4f5;
+      background: #18181b;
+      padding: 0.08em 0.28em;
+      border-radius: 6px;
+    }
+
+    .reveal pre {
+      width: 100%;
+      font-size: 0.56em;
+      box-shadow: none;
+    }
+
+    .reveal pre code {
+      padding: 20px;
+      border-radius: 16px;
+      max-height: 520px;
+      border: 1px solid var(--line);
+      background: #111113;
+      color: #fafafa;
+    }
+
+    .reveal pre {
+      filter: none;
+    }
+
+    .reveal .progress {
+      color: #f4f4f5;
+      height: 4px;
+    }
+
+    .reveal .controls {
+      color: #f4f4f5;
+    }
+
+    .reveal .slide-number {
+      color: var(--muted);
+      background: transparent;
+      font-size: 18px;
+    }
+
+    .label-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .label-row span {
+      font-size: 0.48em;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: var(--chip);
+    }
+
+    .code-note {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.58em;
+      line-height: 1.5;
+    }
+
+    .small {
+      font-size: 0.7em;
+    }
+
+    .tiny {
+      font-size: 0.58em;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <div class="hero">
+          <span class="tag">ATM / Client Server / C++</span>
+          <h1>ATM 银行模拟系统</h1>
+          <p>基于客户端/服务端架构的课程项目实现</p>
+          <p class="subtle">涵盖注册、登录、存取款、转账、流水查询、账户锁定、管理员功能与自动化联调测试</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>1. 项目定位</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>目标</h3>
+            <ul>
+              <li>完整打通 ATM 核心业务流程</li>
+              <li>体现鉴权、审计、事务和管理员能力</li>
+              <li>使用真实数据库持久化，而不是内存模拟</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>项目特征</h3>
+            <ul>
+              <li>Windows 控制台客户端</li>
+              <li>C++ 服务端承载全部业务逻辑</li>
+              <li>MySQL 负责用户、账户、流水和日志存储</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>2. 技术选型</h2>
+        <div class="grid-3">
+          <div class="card">
+            <div class="metric">C++</div>
+            <div class="small">核心业务实现语言</div>
+          </div>
+          <div class="card">
+            <div class="metric">Winsock</div>
+            <div class="small">TCP 通信</div>
+          </div>
+          <div class="card">
+            <div class="metric">MySQL</div>
+            <div class="small">数据持久化</div>
+          </div>
+          <div class="card">
+            <div class="metric">BCrypt</div>
+            <div class="small">SHA-256 密码哈希</div>
+          </div>
+          <div class="card">
+            <div class="metric">JSON</div>
+            <div class="small">请求/响应协议</div>
+          </div>
+          <div class="card">
+            <div class="metric">PowerShell</div>
+            <div class="small">自动化联调测试</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>3. 系统架构</h2>
+        <div class="flow" style="margin-bottom:20px;">
+          <span>控制台客户端</span>
+          <span class="arrow">→</span>
+          <span>TCP 连接</span>
+          <span class="arrow">→</span>
+          <span>服务端请求分发</span>
+          <span class="arrow">→</span>
+          <span>业务服务层</span>
+          <span class="arrow">→</span>
+          <span>MySQL 数据库</span>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <h3>客户端</h3>
+            <ul>
+              <li><code>ClientSocket</code>：连接服务器、发送请求、接收响应</li>
+              <li><code>ClientApp</code>：菜单交互、输入采集、结果展示</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>服务端</h3>
+            <ul>
+              <li><code>TcpServer</code>：监听端口、处理客户端连接</li>
+              <li><code>RequestHandler</code>：解析请求并按 action 分发</li>
+              <li><code>AuthService / AccountService / TransactionService</code>：业务核心</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>4. 项目结构</h2>
+        <pre><code class="language-text">ATM-2/
+├─ client/     控制台客户端
+├─ server/     服务端业务逻辑
+├─ common/     共享协议与模型
+├─ sql/        数据库脚本
+├─ scripts/    自动化测试脚本
+└─ docs/       设计与演示文档</code></pre>
+      </section>
+
+      <section>
+        <h2>5. 核心功能</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>普通用户功能</h3>
+            <ul>
+              <li>注册 / 开户</li>
+              <li>登录 / 退出</li>
+              <li>查询余额</li>
+              <li>存款 / 取款 / 转账</li>
+              <li>修改密码</li>
+              <li>查询交易流水</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>管理员功能</h3>
+            <ul>
+              <li>识别管理员角色</li>
+              <li>分页查看用户与账户</li>
+              <li>解锁账户</li>
+              <li>重置用户密码</li>
+              <li>查询指定账户流水</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>6. 数据库设计</h2>
+        <div class="table-like small">
+          <div class="head">数据表</div><div class="head">作用</div>
+          <div><code>users</code></div><div>存储卡号、用户名、密码哈希、盐、失败次数、锁定状态、角色</div>
+          <div><code>accounts</code></div><div>存储账户号、余额、状态，与用户一对一关联</div>
+          <div><code>transactions</code></div><div>记录每一笔存款、取款、转入、转出流水</div>
+          <div><code>login_logs</code></div><div>记录登录成功/失败及失败原因</div>
+          <div><code>admin_logs</code></div><div>记录管理员解锁、重置密码等操作</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>7. 通信协议</h2>
+        <div class="grid-2">
+          <div>
+            <h3>请求格式</h3>
+            <pre><code class="language-json">{
+  "action": "login",
+  "sessionId": "",
+  "data": {
+    "cardNo": "62220001",
+    "password": "123456"
+  }
+}</code></pre>
+          </div>
+          <div>
+            <h3>响应格式</h3>
+            <pre><code class="language-json">{
+  "success": true,
+  "code": 0,
+  "message": "登录成功",
+  "data": {
+    "sessionId": "S_xxx",
+    "role": "user"
+  }
+}</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>8. 服务端模块职责</h2>
+        <div class="grid-3 small">
+          <div class="card"><strong>TcpServer</strong><br>监听端口，收发 TCP 数据，为每个客户端连接创建处理线程。</div>
+          <div class="card"><strong>RequestHandler</strong><br>解析 JSON 请求，根据 <code>action</code> 分发到不同业务函数。</div>
+          <div class="card"><strong>AuthService</strong><br>注册、登录、改密、会话管理、锁定和管理员操作。</div>
+          <div class="card"><strong>AccountService</strong><br>余额查询、存款、取款、敏感操作二次密码验证。</div>
+          <div class="card"><strong>TransactionService</strong><br>转账、用户流水查询、管理员流水查询。</div>
+          <div class="card"><strong>Database / PasswordUtil</strong><br>MySQL 封装、SQL 转义、事务控制、盐值与哈希计算。</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>9. 关键代码：请求分发</h2>
+        <div class="label-row">
+          <span>server/requesthandler.cpp</span>
+          <span>routing</span>
+          <span>protocol</span>
+        </div>
+        <pre><code class="language-cpp">std::string RequestHandler::HandleRequest(const std::string& requestText, const std::string& clientIp) {
+    Request request;
+    if (!ProtocolUtil::ParseRequest(requestText, request)) {
+        Response response;
+        response.success = false;
+        response.code = 1006;
+        response.message = "请求格式错误";
+        return ProtocolUtil::BuildResponse(response);
+    }
+
+    return ProtocolUtil::BuildResponse(Dispatch(request, clientIp));
+}
+
+Response RequestHandler::Dispatch(const Request& request, const std::string& clientIp) {
+    if (request.action == "login") return authService_->Login(request, clientIp);
+    if (request.action == "query_balance") return accountService_->QueryBalance(request);
+    if (request.action == "deposit") return accountService_->Deposit(request);
+    if (request.action == "withdraw") return accountService_->Withdraw(request);
+    if (request.action == "transfer") return transactionService_->Transfer(request);
+
+    Response response;
+    response.success = false;
+    response.code = 1006;
+    response.message = "未知操作";
+    return response;
+}</code></pre>
+        <p class="code-note">这一层把 TCP 文本请求转成统一的 <code>Request</code> 对象，并按 <code>action</code> 分发到认证、账户和交易服务，保证协议入口统一。</p>
+      </section>
+
+      <section>
+        <h2>10. 关键代码：二次密码验证</h2>
+        <div class="label-row">
+          <span>server/accountservice.cpp</span>
+          <span>security</span>
+          <span>2fa like check</span>
+        </div>
+        <pre><code class="language-cpp">bool AccountService::VerifySessionPassword(const SessionInfo& session,
+                                           const Request& request,
+                                           Response& errorResponse) {
+    const auto passwordIt = request.data.find("password");
+    if (passwordIt == request.data.end() || passwordIt->second.empty()) {
+        errorResponse = MakeResponse(false, 1006, "缺少密码");
+        return false;
+    }
+
+    std::vector&lt;std::string&gt; row;
+    const std::string sql =
+        "SELECT password_hash, password_salt FROM users WHERE id = " +
+        std::to_string(session.userId) + " LIMIT 1";
+
+    if (!db_->Query(sql) || !db_->FetchRow(row)) {
+        errorResponse = MakeResponse(false, 1001, "用户不存在");
+        return false;
+    }
+
+    if (!PasswordUtil::VerifyPassword(passwordIt->second, row[1], row[0])) {
+        errorResponse = MakeResponse(false, 1012, "密码验证失败");
+        return false;
+    }
+
+    return true;
+}</code></pre>
+        <p class="code-note">余额查询、存款、取款、转账都不是只依赖会话，而是要求用户再次输入密码，降低“已登录状态被误用”的风险。</p>
+      </section>
+
+      <section>
+        <h2>11. 关键代码：转账事务</h2>
+        <div class="label-row">
+          <span>server/transactionservice.cpp</span>
+          <span>transaction</span>
+          <span>consistency</span>
+        </div>
+        <pre><code class="language-cpp">if (!db_->BeginTransaction()) {
+    return MakeResponse(false, 1011, db_->GetLastError());
+}
+
+if (!db_->Execute("UPDATE accounts SET balance = " + std::to_string(sourceAfter) + " WHERE id = " + std::to_string(source.id)) ||
+    !db_->Execute("UPDATE accounts SET balance = " + std::to_string(targetAfter) + " WHERE id = " + std::to_string(target.id)) ||
+    !InsertTransaction(source.id, "transfer_out", amount, source.balance, sourceAfter, target.accountNo, remark) ||
+    !InsertTransaction(target.id, "transfer_in", amount, target.balance, targetAfter, source.accountNo, remark)) {
+    db_->Rollback();
+    return MakeResponse(false, 1011, db_->GetLastError());
+}
+
+if (!db_->Commit()) {
+    db_->Rollback();
+    return MakeResponse(false, 1011, db_->GetLastError());
+}</code></pre>
+        <p class="code-note">转账的关键不是“扣款”或“入账”单独成功，而是两边余额更新和两条流水写入必须处于同一个事务里。</p>
+      </section>
+
+      <section>
+        <h2>12. 关键代码：密码哈希</h2>
+        <div class="label-row">
+          <span>server/passwordutil.cpp</span>
+          <span>bcrypt</span>
+          <span>sha-256</span>
+        </div>
+        <pre><code class="language-cpp">std::string PasswordUtil::HashPassword(const std::string& password, const std::string& salt) {
+    return Sha256(password + salt);
+}
+
+bool PasswordUtil::VerifyPassword(const std::string& inputPassword,
+                                  const std::string& salt,
+                                  const std::string& storedHash) {
+    return HashPassword(inputPassword, salt) == storedHash;
+}</code></pre>
+        <p class="code-note">项目没有明文存储密码，而是把随机盐和哈希结果分开保存。登录和二次验证时都通过重新计算哈希进行比对。</p>
+      </section>
+
+      <section>
+        <h2>13. 关键业务规则</h2>
+        <ul>
+          <li>登录前先检查账户是否锁定</li>
+          <li>密码错误一次，<code>failed_attempts + 1</code></li>
+          <li>连续错误 3 次，自动设置 <code>is_locked = 1</code></li>
+          <li>登录成功后清零失败次数</li>
+          <li>所有资金类操作都要写入 <code>transactions</code></li>
+          <li>转账必须使用数据库事务保证扣款和入账一致</li>
+          <li>查询余额、存款、取款、转账前需要再次输入密码</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>14. 安全设计</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>密码安全</h3>
+            <ul>
+              <li>注册时随机生成盐值</li>
+              <li>保存 <code>SHA256(password + salt)</code></li>
+              <li>数据库不保存明文密码</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>敏感操作防护</h3>
+            <ul>
+              <li>登录后使用内存会话控制访问</li>
+              <li>资金类操作要求二次密码验证</li>
+              <li>登录日志和管理员日志可追踪</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>15. 转账一致性设计</h2>
+        <div class="flow" style="margin-bottom:22px;">
+          <span>校验会话与密码</span>
+          <span class="arrow">→</span>
+          <span>检查目标账户</span>
+          <span class="arrow">→</span>
+          <span>检查余额</span>
+          <span class="arrow">→</span>
+          <span>开启事务</span>
+          <span class="arrow">→</span>
+          <span>扣减源账户</span>
+          <span class="arrow">→</span>
+          <span>增加目标账户</span>
+          <span class="arrow">→</span>
+          <span>写两条流水</span>
+          <span class="arrow">→</span>
+          <span>提交事务</span>
+        </div>
+        <p class="small">任何一步失败都执行回滚，保证“要么全部成功，要么全部不生效”。</p>
+      </section>
+
+      <section>
+        <h2>16. 分页与展示优化</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>已实现分页</h3>
+            <ul>
+              <li>用户流水查询支持 <code>page</code> / <code>pageSize</code></li>
+              <li>管理员流水查询支持分页</li>
+              <li>管理员用户列表支持分页</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>控制台展示优化</h3>
+            <ul>
+              <li>流水记录已格式化输出</li>
+              <li>用户列表已格式化输出</li>
+              <li>Windows 控制台已统一切换到 UTF-8</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>17. 关键代码：自动化联调脚本</h2>
+        <div class="label-row">
+          <span>scripts/test-atmintegration.ps1</span>
+          <span>e2e</span>
+          <span>automation</span>
+        </div>
+        <pre><code class="language-powershell">Write-Host "Preparing database..."
+Invoke-MySqlCommand -Sql "DROP DATABASE IF EXISTS $DbSchema"
+Invoke-MySqlScript -ScriptPath $schemaPath
+Invoke-MySqlScript -ScriptPath $seedPath
+
+$serverProcess = [System.Diagnostics.Process]::Start($startInfo)
+Wait-ForTcpPort -HostName $ServerHost -Port $ServerPort
+
+$register = Invoke-AtmRequest @{ action = "register"; sessionId = ""; data = @{ ... } }
+$userLogin = Invoke-AtmRequest @{ action = "login"; sessionId = ""; data = @{ ... } }
+$balance = Invoke-AtmRequest @{ action = "query_balance"; sessionId = $userSession; data = @{ password = $testPassword } }
+$transfer = Invoke-AtmRequest @{ action = "transfer"; sessionId = $userSession; data = @{ password = $testPassword; ... } }
+$adminLogin = Invoke-AtmRequest @{ action = "login"; sessionId = ""; data = @{ cardNo = "admin001"; password = "admin123" } }
+
+Write-Host "Integration flow completed successfully."</code></pre>
+        <p class="code-note">这不是只靠手工点菜单的项目。脚本会自动重建数据库、拉起服务端，并串起注册、登录、转账、锁定、管理员解锁等完整场景。</p>
+      </section>
+
+      <section>
+        <h2>18. 自动化联调测试</h2>
+        <div class="card">
+          <p>项目提供 PowerShell 自动化联调脚本：<code>scripts/Test-ATMIntegration.ps1</code></p>
+          <ul>
+            <li>重建测试数据库</li>
+            <li>导入 <code>schema.sql</code> 和 <code>seed.sql</code></li>
+            <li>启动服务端</li>
+            <li>注册、登录、余额查询、存款、取款、转账</li>
+            <li>分页流水查询</li>
+            <li>3 次错误密码锁定</li>
+            <li>管理员解锁与重置密码</li>
+            <li>异常输入校验</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>19. 联调结果</h2>
+        <pre><code class="language-text">Preparing database...
+Starting server...
+Running integration flow...
+Integration flow completed successfully.
+--- server stdout ---
+ATM server started at 127.0.0.1:8888</code></pre>
+        <p class="small">说明：当前版本已经完成从数据库初始化到核心业务验证的端到端测试。</p>
+      </section>
+
+      <section>
+        <h2>20. 演示流程建议</h2>
+        <ol>
+          <li>展示数据库表结构，说明 <code>users</code>、<code>accounts</code>、<code>transactions</code> 的作用</li>
+          <li>运行联调脚本，证明系统端到端可用</li>
+          <li>启动客户端，演示普通用户登录、查询余额、存取款、转账、流水查询</li>
+          <li>故意连续输错密码 3 次，演示自动锁定</li>
+          <li>使用管理员账号登录，演示用户列表、解锁、重置密码、查询流水</li>
+          <li>总结安全与一致性设计</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>21. 关键源码位置</h2>
+        <div class="grid-2 tiny">
+          <div class="card">
+            <ul>
+              <li><code>client/ClientApp.cpp</code>：客户端菜单和交互</li>
+              <li><code>client/ClientSocket.cpp</code>：客户端 TCP 通信</li>
+              <li><code>server/ServerMain.cpp</code>：启动与配置</li>
+              <li><code>server/TcpServer.cpp</code>：监听和连接处理</li>
+              <li><code>server/RequestHandler.cpp</code>：请求分发</li>
+            </ul>
+          </div>
+          <div class="card">
+            <ul>
+              <li><code>server/AuthService.cpp</code>：注册、登录、会话、管理员功能</li>
+              <li><code>server/AccountService.cpp</code>：余额、存取款、二次密码验证</li>
+              <li><code>server/TransactionService.cpp</code>：转账与流水查询</li>
+              <li><code>server/Database.cpp</code>：MySQL C API 封装</li>
+              <li><code>server/PasswordUtil.cpp</code>：盐值与 SHA-256</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>22. 当前完成度</h2>
+        <div class="grid-3">
+          <div class="card">
+            <div class="metric">100%</div>
+            <div class="small">核心 ATM 业务流程</div>
+          </div>
+          <div class="card">
+            <div class="metric">100%</div>
+            <div class="small">管理员功能与分页查询</div>
+          </div>
+          <div class="card">
+            <div class="metric">100%</div>
+            <div class="small">自动化联调测试与文档</div>
+          </div>
+        </div>
+        <p class="small" style="margin-top:18px;">后续仍可继续优化客户端输入校验、界面表现和网络协议健壮性。</p>
+      </section>
+
+      <section>
+        <div class="hero">
+          <span class="tag">Summary</span>
+          <h1>总结</h1>
+          <ul>
+            <li>项目完成了 ATM 业务从客户端到数据库的完整闭环</li>
+            <li>具备密码哈希、账户锁定、交易流水、管理员审计、事务转账等关键能力</li>
+            <li>已经具备课程演示与答辩所需的代码、文档和联调验证基础</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <div class="hero" style="align-items:center; text-align:center;">
+          <span class="tag">Q &amp; A</span>
+          <h1>谢谢</h1>
+          <p class="subtle">欢迎提问</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/notes/notes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/highlight.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      controls: true,
+      progress: true,
+      transition: 'fade',
+      center: false,
+      plugins: [ RevealNotes, RevealHighlight ]
+    });
+  </script>
+</body>
+</html>

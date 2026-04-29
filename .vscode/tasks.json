@@ -1,0 +1,76 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build server",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-NoProfile",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-Command",
+                "New-Item -ItemType Directory -Force 'build\\server' | Out-Null; cl /nologo /std:c++17 /EHsc /Zi /I. /I'common' /I'server' /I'client' /I'C:\\Program Files\\MySQL\\MySQL Server 8.0\\include' common\\Protocol.cpp common\\JsonUtil.cpp server\\Database.cpp server\\PasswordUtil.cpp server\\AuthService.cpp server\\AccountService.cpp server\\TransactionService.cpp server\\RequestHandler.cpp server\\TcpServer.cpp server\\ServerMain.cpp /link /LIBPATH:'C:\\Program Files\\MySQL\\MySQL Server 8.0\\lib' ws2_32.lib bcrypt.lib libmysql.lib /OUT:build\\server\\atm_server.exe /PDB:build\\server\\atm_server.pdb"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Build ATM server with MSVC and MySQL C API"
+        },
+        {
+            "label": "build client",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-NoProfile",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-Command",
+                "New-Item -ItemType Directory -Force 'build\\client' | Out-Null; cl /nologo /std:c++17 /EHsc /Zi /I. /I'common' /I'client' common\\Protocol.cpp common\\JsonUtil.cpp client\\ClientSocket.cpp client\\ClientApp.cpp client\\ClientMain.cpp /link ws2_32.lib /OUT:build\\client\\atm_client.exe /PDB:build\\client\\atm_client.pdb"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "group": "build",
+            "detail": "Build ATM client with MSVC"
+        },
+        {
+            "label": "build all",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "build server",
+                "build client"
+            ],
+            "problemMatcher": [],
+            "group": "build",
+            "detail": "Build both ATM server and client"
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-NoProfile",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-Command",
+                "if (Test-Path 'build') { Remove-Item -Recurse -Force 'build' }"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "detail": "Remove build outputs"
+        }
+    ]
+}
