@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveNugetPackages>false</ResolveNugetPackages>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5651EAC4-04B4-3681-8014-1D6AB5ACD9E2}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="Q:\ATM-2\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule Q:/ATM-2/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\bin\cmake.exe -SQ:/ATM-2 -BQ:/ATM-2/build/msvc --check-stamp-file Q:/ATM-2/build/msvc/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Q:\ATM-2\build\msvc\CMakeFiles\4.3.1\CMakeCXXCompiler.cmake;Q:\ATM-2\build\msvc\CMakeFiles\4.3.1\CMakeRCCompiler.cmake;Q:\ATM-2\build\msvc\CMakeFiles\4.3.1\CMakeSystem.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeCXXInformation.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeCommonLanguageInclude.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeGenericSystem.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeInitializeConfigs.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeLanguageInformation.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeRCInformation.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeSystemSpecificInformation.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeSystemSpecificInitialize.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Compiler\CMakeCommonCompilerMacros.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Compiler\MSVC-CXX.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Compiler\MSVC.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Internal\CMakeCXXLinkerInformation.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Internal\CMakeCommonLinkerInformation.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Linker\MSVC-CXX.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Linker\MSVC.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\Windows-Initialize.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\Windows-MSVC-CXX.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\Windows-MSVC.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\Windows.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Q:\ATM-2\build\msvc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule Q:/ATM-2/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\bin\cmake.exe -SQ:/ATM-2 -BQ:/ATM-2/build/msvc --check-stamp-file Q:/ATM-2/build/msvc/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Q:\ATM-2\build\msvc\CMakeFiles\4.3.1\CMakeCXXCompiler.cmake;Q:\ATM-2\build\msvc\CMakeFiles\4.3.1\CMakeRCCompiler.cmake;Q:\ATM-2\build\msvc\CMakeFiles\4.3.1\CMakeSystem.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeCXXInformation.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeCommonLanguageInclude.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeGenericSystem.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeInitializeConfigs.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeLanguageInformation.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeRCInformation.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeSystemSpecificInformation.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeSystemSpecificInitialize.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Compiler\CMakeCommonCompilerMacros.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Compiler\MSVC-CXX.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Compiler\MSVC.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Internal\CMakeCXXLinkerInformation.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Internal\CMakeCommonLinkerInformation.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Linker\MSVC-CXX.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Linker\MSVC.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\Windows-Initialize.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\Windows-MSVC-CXX.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\Windows-MSVC.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\Windows.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Q:\ATM-2\build\msvc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule Q:/ATM-2/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\bin\cmake.exe -SQ:/ATM-2 -BQ:/ATM-2/build/msvc --check-stamp-file Q:/ATM-2/build/msvc/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Q:\ATM-2\build\msvc\CMakeFiles\4.3.1\CMakeCXXCompiler.cmake;Q:\ATM-2\build\msvc\CMakeFiles\4.3.1\CMakeRCCompiler.cmake;Q:\ATM-2\build\msvc\CMakeFiles\4.3.1\CMakeSystem.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeCXXInformation.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeCommonLanguageInclude.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeGenericSystem.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeInitializeConfigs.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeLanguageInformation.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeRCInformation.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeSystemSpecificInformation.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeSystemSpecificInitialize.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Compiler\CMakeCommonCompilerMacros.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Compiler\MSVC-CXX.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Compiler\MSVC.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Internal\CMakeCXXLinkerInformation.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Internal\CMakeCommonLinkerInformation.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Linker\MSVC-CXX.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Linker\MSVC.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\Windows-Initialize.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\Windows-MSVC-CXX.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\Windows-MSVC.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\Windows.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Q:\ATM-2\build\msvc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule Q:/ATM-2/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\bin\cmake.exe -SQ:/ATM-2 -BQ:/ATM-2/build/msvc --check-stamp-file Q:/ATM-2/build/msvc/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Q:\ATM-2\build\msvc\CMakeFiles\4.3.1\CMakeCXXCompiler.cmake;Q:\ATM-2\build\msvc\CMakeFiles\4.3.1\CMakeRCCompiler.cmake;Q:\ATM-2\build\msvc\CMakeFiles\4.3.1\CMakeSystem.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeCXXInformation.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeCommonLanguageInclude.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeGenericSystem.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeInitializeConfigs.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeLanguageInformation.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeRCInformation.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeSystemSpecificInformation.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\CMakeSystemSpecificInitialize.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Compiler\CMakeCommonCompilerMacros.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Compiler\MSVC-CXX.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Compiler\MSVC.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Internal\CMakeCXXLinkerInformation.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Internal\CMakeCommonLinkerInformation.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Linker\MSVC-CXX.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Linker\MSVC.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\Windows-Initialize.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\Windows-MSVC-CXX.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\Windows-MSVC.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\Windows.cmake;Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\share\cmake-4.3\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Q:\ATM-2\build\msvc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="Q:\ATM-2\build\msvc\ZERO_CHECK.vcxproj">
+      <Project>{389F6536-DBB8-3C6E-B0C2-A7528564F2AE}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="Q:\ATM-2\build\msvc\atm_client.vcxproj">
+      <Project>{118B5748-D466-3F88-B0EB-6E30FE2AB294}</Project>
+      <Name>atm_client</Name>
+    </ProjectReference>
+    <ProjectReference Include="Q:\ATM-2\build\msvc\atm_common.vcxproj">
+      <Project>{BE5AD7FF-97AD-3F51-B089-47E635C49025}</Project>
+      <Name>atm_common</Name>
+    </ProjectReference>
+    <ProjectReference Include="Q:\ATM-2\build\msvc\atm_server.vcxproj">
+      <Project>{C53E0108-3639-3838-85E0-7E9EDFB4DC34}</Project>
+      <Name>atm_server</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

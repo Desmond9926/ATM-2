@@ -1,0 +1,8 @@
+Q:\ATM-2\server\AccountService.cpp;Q:\ATM-2\build\msvc\atm_server.dir\Debug\AccountService.obj
+Q:\ATM-2\server\AuthService.cpp;Q:\ATM-2\build\msvc\atm_server.dir\Debug\AuthService.obj
+Q:\ATM-2\server\Database.cpp;Q:\ATM-2\build\msvc\atm_server.dir\Debug\Database.obj
+Q:\ATM-2\server\PasswordUtil.cpp;Q:\ATM-2\build\msvc\atm_server.dir\Debug\PasswordUtil.obj
+Q:\ATM-2\server\RequestHandler.cpp;Q:\ATM-2\build\msvc\atm_server.dir\Debug\RequestHandler.obj
+Q:\ATM-2\server\ServerMain.cpp;Q:\ATM-2\build\msvc\atm_server.dir\Debug\ServerMain.obj
+Q:\ATM-2\server\TcpServer.cpp;Q:\ATM-2\build\msvc\atm_server.dir\Debug\TcpServer.obj
+Q:\ATM-2\server\TransactionService.cpp;Q:\ATM-2\build\msvc\atm_server.dir\Debug\TransactionService.obj

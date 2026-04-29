@@ -6,6 +6,10 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+if(MSVC)
+    add_compile_options(/utf-8)
+endif()
+
 set(MYSQL_ROOT "C:/Program Files/MySQL/MySQL Server 8.0")
 set(MYSQL_INCLUDE_DIR "${MYSQL_ROOT}/include")
 set(MYSQL_LIBRARY "${MYSQL_ROOT}/lib/libmysql.lib")

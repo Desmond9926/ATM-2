@@ -84,23 +84,29 @@ ATM-2/
 在项目根目录执行：
 
 ```powershell
-cmake -S . -B build
-cmake --build build
+cmake --preset msvc-debug
+cmake --build --preset build-msvc-debug
 ```
 
 构建完成后会生成：
 
-- `build/atm_server.exe`
-- `build/atm_client.exe`
+- `build/msvc/Debug/atm_server.exe`
+- `build/msvc/Debug/atm_client.exe`
 
-并且构建流程会自动将 `libmysql.dll` 复制到 `build/` 目录，避免服务端手动启动时报缺少 DLL。
+并且构建流程会自动将 `libmysql.dll` 复制到输出目录，避免服务端手动启动时报缺少 DLL。
+
+### 使用 VS Code
+
+- 安装 `C/C++` 和 `CMake Tools` 扩展
+- 直接打开项目根目录，VS Code 会默认使用 `msvc-debug` 预设
+- IntelliSense 通过 `CMake Tools` 同步 MSVC 的头文件、宏和编译选项
 
 ## 启动方式
 
 ### 1. 启动服务端
 
 ```powershell
-.\build\atm_server.exe
+.\build\msvc\Debug\atm_server.exe
 ```
 
 正常输出示例：
@@ -112,10 +118,12 @@ ATM server started at 127.0.0.1:8888
 ### 2. 启动客户端
 
 ```powershell
-.\build\atm_client.exe
+.\build\msvc\Debug\atm_client.exe
 ```
 
 客户端启动后会显示主菜单。
+
+如果之前用过 MinGW/Ninja 打开过本项目，`build/` 根目录下可能还残留旧缓存；这不会影响新的 MSVC 预设构建，但如果 VS Code 仍显示旧工具链信息，删除旧缓存后重新打开工作区即可。
 
 ## 运行配置
 

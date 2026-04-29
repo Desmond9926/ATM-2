@@ -3,6 +3,7 @@
     "configurations": [
         {
             "name": "Win32-MSVC",
+            "configurationProvider": "ms-vscode.cmake-tools",
             "includePath": [
                 "${workspaceFolder}",
                 "${workspaceFolder}\\client",
@@ -16,7 +17,6 @@
                 "_UNICODE",
                 "NOMINMAX"
             ],
-            "windowsSdkVersion": "10.0.22621.0",
             "compilerPath": "cl.exe",
             "cStandard": "c17",
             "cppStandard": "c++17",

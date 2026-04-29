@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"Q:/ATM-2/build/msvc/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,0 +1,5 @@
+Q:/ATM-2/build/msvc/CMakeFiles/atm_common.dir
+Q:/ATM-2/build/msvc/CMakeFiles/atm_server.dir
+Q:/ATM-2/build/msvc/CMakeFiles/atm_client.dir
+Q:/ATM-2/build/msvc/CMakeFiles/ALL_BUILD.dir
+Q:/ATM-2/build/msvc/CMakeFiles/ZERO_CHECK.dir

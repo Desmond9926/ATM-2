@@ -1,0 +1,10 @@
+^Q:\ATM-2\BUILD\MSVC\CMAKEFILES\ECC6E5D3C5CC973687E66CFA3B52B3C8\GENERATE.STAMP.RULE
+setlocal
+Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\bin\cmake.exe -SQ:/ATM-2 -BQ:/ATM-2/build/msvc --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file Q:/ATM-2/build/msvc/ATMSystem.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,10 @@
+^Q:\ATM-2\CMAKELISTS.TXT
+setlocal
+Z:\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-14.0.0-r7\mingw64\bin\cmake.exe -SQ:/ATM-2 -BQ:/ATM-2/build/msvc --check-stamp-file Q:/ATM-2/build/msvc/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
